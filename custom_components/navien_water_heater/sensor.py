@@ -68,7 +68,7 @@ def get_description(hass_units,navien_units,sensor_type):
             state_class = SensorStateClass.TOTAL_INCREASING,
             native_unit_of_measurement=VOLUME_CUBIC_METERS if hass_units == "metric" else VOLUME_CUBIC_FEET,
             name="Cumulative Gas Use",
-            conversion_factor = 1 if hass_units == navien_units else 1 if hass_units == "us_customary" else 1,
+            conversion_factor = 0.0283168732 if hass_units == navien_units else 0.0283168732 if hass_units == "us_customary" else 0.0283168732,
             device_class=SensorDeviceClass.GAS
         ),
         "DHWFlowRate": GenericSensorDescription(
